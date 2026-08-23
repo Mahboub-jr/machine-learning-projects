@@ -1,0 +1,17 @@
+# Runtime dependencies for EduRisk AI - Student Dropout Early-Warning System.
+# Python 3.11 or newer.
+#
+#   pip install -r requirements.txt
+#   streamlit run app/app.py
+#
+# scikit-learn is pinned exactly on purpose: models/student_dropout_pipeline.joblib
+# was written with this version, and a saved sklearn Pipeline does not reliably
+# unpickle across minor releases (1.8.x raises AttributeError on this artifact).
+# Change this pin only if you retrain the model with `python -m src.train`.
+scikit-learn==1.9.0
+
+# Lower bounds only, so the project installs on any supported Python version.
+joblib>=1.4
+numpy>=1.26
+pandas>=2.2
+streamlit>=1.40

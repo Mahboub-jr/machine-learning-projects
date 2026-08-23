@@ -1,0 +1,11 @@
+# Everything in requirements.txt, plus the tools used for exploration and tests.
+#
+#   pip install -r requirements-dev.txt
+#   pytest tests -q
+#   jupyter lab notebooks/01-eda.ipynb
+
+-r requirements.txt
+
+matplotlib>=3.8      # notebooks/01-eda.ipynb
+jupyterlab>=4.0      # to open the notebook
+pytest>=8.0          # tests/

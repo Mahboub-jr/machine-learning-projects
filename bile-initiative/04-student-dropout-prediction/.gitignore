@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/processed/
+.env
+
+# models/*.joblib is deliberately NOT ignored.
+# student_dropout_pipeline.joblib is ~6 KB and the app cannot start without it,
+# so it is committed to keep the repository runnable straight after a clone.
+models/*.pkl
