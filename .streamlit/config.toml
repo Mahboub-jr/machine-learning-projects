@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------------------
+# Theme
+# ---------------------------------------------------------------------------
+# Colours are declared per mode under [theme.light] and [theme.dark], never at
+# the top level.
+#
+# Why that matters: a colour set directly under [theme] is mode-agnostic - it is
+# applied whichever base is active. An earlier version of this file set
+# backgroundColor/textColor/secondaryBackgroundColor there, so switching the app
+# to Dark left the page painted white with near-black text while the widgets
+# switched underneath. Keeping every colour inside a mode block lets Streamlit's
+# own theme resolver pick a complete, coherent set.
+#
+# `base` is deliberately not set, so the app follows the viewer's system
+# preference and both options in Settings -> Appearance resolve correctly.
+#
+# Only non-colour tokens - radii, type scale, border visibility - belong here.
+
+[theme]
+baseFontSize = 15
+baseRadius = "0.6rem"
+buttonRadius = "0.5rem"
+headingFontWeights = [650, 640, 630]
+showWidgetBorder = true
+showSidebarBorder = true
+
+# --------------------------------- light -----------------------------------
+[theme.light]
+primaryColor = "#2f6fd0"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f1f2ef"
+textColor = "#15161a"
+borderColor = "#e2e3df"
+linkColor = "#2560bb"
+
+[theme.light.sidebar]
+backgroundColor = "#f8f8f6"
+secondaryBackgroundColor = "#ecedea"
+textColor = "#15161a"
+borderColor = "#e2e3df"
+
+# --------------------------------- dark ------------------------------------
+# primaryColor here has to serve two roles at once: Streamlit paints the primary
+# button label white on it, and uses it as text for the active tab. Those pull in
+# opposite directions on a dark page; #427ac6 is the point that maximises the
+# weaker of the two (both land at 4.35:1).
+[theme.dark]
+primaryColor = "#427ac6"
+backgroundColor = "#0f1115"
+secondaryBackgroundColor = "#1a1e25"
+textColor = "#e7e8e4"
+borderColor = "#2a2f38"
+linkColor = "#7ab0f5"
+
+[theme.dark.sidebar]
+backgroundColor = "#12151a"
+secondaryBackgroundColor = "#1e232b"
+textColor = "#e7e8e4"
+borderColor = "#2a2f38"
+
+[browser]
+gatherUsageStats = false
